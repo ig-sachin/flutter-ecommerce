@@ -3,7 +3,6 @@ import 'package:ecommerce/Pages/LoginPage.dart';
 import 'package:ecommerce/Pages/routes.dart';
 import 'package:ecommerce/widgets/themes.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
