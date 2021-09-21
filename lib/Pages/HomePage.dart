@@ -40,13 +40,48 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-            ? ListView.builder(
-                itemCount: CatalogModel.items.length,
+            ? GridView.builder(
                 itemBuilder: (context, index) {
-                  return ItemWidget(
-                    item: CatalogModel.items[index],
+                  final item = CatalogModel.items[index];
+                  return Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                    child: GridTile(
+                      header: Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: Colors.purple,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Text(
+                          item.name,
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      child: Image.network(
+                        item.image,
+                      ),
+                      footer: Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                        ),
+                        child: Text(
+                          item.price.toString(),
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
                   );
                 },
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 20,
+                  crossAxisSpacing: 10,
+                ),
+                itemCount: CatalogModel.items.length,
               )
             : Center(
                 child: CircularProgressIndicator(),
