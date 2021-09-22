@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                         });
                       },
                       decoration: InputDecoration(
-                          hintText: "Username", labelText: "Usernmae"),
+                          hintText: "Username", labelText: "Username"),
                     ),
                     TextFormField(
                       validator: (value) {

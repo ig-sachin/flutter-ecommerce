@@ -1,3 +1,4 @@
+import 'package:ecommerce/Pages/CartPage.dart';
 import 'package:ecommerce/Pages/HomePage.dart';
 import 'package:ecommerce/Pages/LoginPage.dart';
 import 'package:ecommerce/Pages/routes.dart';
@@ -16,11 +17,12 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: "/",
       routes: {
-        "/": (context) => LoginPage(),
+        "/": (context) => HomePage(),
         MyRoutes.homeRoute: (context) => HomePage(),
-        MyRoutes.loginRoute: (context) => LoginPage()
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.cartRoute: (context) => CartPage(),
       },
     );
   }

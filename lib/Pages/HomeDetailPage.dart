@@ -1,5 +1,6 @@
 import 'package:ecommerce/models/catalog.dart';
 import 'package:ecommerce/widgets/themes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -11,7 +12,9 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+        ),
         backgroundColor: MyTheme.creamColor,
         bottomNavigationBar: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
@@ -28,8 +31,10 @@ class HomeDetailPage extends StatelessWidget {
                   StadiumBorder(),
                 ),
               ),
-              child: "Buy".text.make(),
-            ).wh(100, 50)
+              child: Container(
+                child: "Add To Cart".text.make().w32(context),
+              ),
+            ).wh(120, 50)
           ],
         ).p32(),
         body: Container(
@@ -40,7 +45,7 @@ class HomeDetailPage extends StatelessWidget {
                 tag: Key(catalog.id.toString()),
                 child: Image.network(
                   catalog.image,
-                  height: 250,
+                  height: 200,
                 ),
               ),
               Expanded(
@@ -57,7 +62,11 @@ class HomeDetailPage extends StatelessWidget {
                             .color(MyTheme.darkBluishColor)
                             .bold
                             .make(),
-                        catalog.desc.text.make(),
+                        catalog.desc.text.xl.make(),
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio at magni voluptates minus quam, animi consequuntur eius maiores ullam cum perspiciatis perferendis officia quo modi suscipit numquam enim eligendi cupiditate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio at magni voluptates minus quam, animi consequuntur eius maiores ullam cum perspiciatis perferendis officia quo modi suscipit numquam enim eligendi cupiditate"
+                            .text
+                            .make()
+                            .p16(),
                       ],
                     ).py16(),
                   ),
