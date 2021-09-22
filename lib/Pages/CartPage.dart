@@ -12,7 +12,7 @@ class CartPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         title: "Cart".text.xl3.make(),
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: Theme.of(context).canvasColor,
     );
   }
 }

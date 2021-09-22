@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: Theme.of(context).canvasColor,
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -99,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Material(
               borderRadius: BorderRadius.circular(changedButton ? 150 : 9),
-              color: Colors.deepPurple,
+              color: Theme.of(context).buttonColor,
               child: InkWell(
                 onTap: () => moveToHome(context),
                 child: AnimatedContainer(

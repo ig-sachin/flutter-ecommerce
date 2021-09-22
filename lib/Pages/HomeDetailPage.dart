@@ -15,28 +15,31 @@ class HomeDetailPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
         ),
-        backgroundColor: MyTheme.creamColor,
-        bottomNavigationBar: ButtonBar(
-          alignment: MainAxisAlignment.spaceBetween,
-          buttonPadding: EdgeInsets.zero,
-          children: [
-            "\$${catalog.price}".text.bold.xl4.red500.make(),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(
-                  MyTheme.darkBluishColor,
+        backgroundColor: context.canvasColor,
+        bottomNavigationBar: Container(
+          color: context.cardColor,
+          child: ButtonBar(
+            alignment: MainAxisAlignment.spaceBetween,
+            buttonPadding: EdgeInsets.zero,
+            children: [
+              "\$${catalog.price}".text.bold.xl4.red500.make(),
+              ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                    context.theme.buttonColor,
+                  ),
+                  shape: MaterialStateProperty.all(
+                    StadiumBorder(),
+                  ),
                 ),
-                shape: MaterialStateProperty.all(
-                  StadiumBorder(),
+                child: Container(
+                  child: "Add To Cart".text.make().w32(context),
                 ),
-              ),
-              child: Container(
-                child: "Add To Cart".text.make().w32(context),
-              ),
-            ).wh(120, 50)
-          ],
-        ).p32(),
+              ).wh(120, 50)
+            ],
+          ).p32(),
+        ),
         body: Container(
           padding: EdgeInsets.all(20),
           child: Column(
@@ -55,20 +58,22 @@ class HomeDetailPage extends StatelessWidget {
                   edge: VxEdge.BOTTOM,
                   child: Container(
                     width: context.screenWidth,
-                    color: Colors.white,
-                    child: Column(
-                      children: [
-                        catalog.name.text.xl4
-                            .color(MyTheme.darkBluishColor)
-                            .bold
-                            .make(),
-                        catalog.desc.text.xl.make(),
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio at magni voluptates minus quam, animi consequuntur eius maiores ullam cum perspiciatis perferendis officia quo modi suscipit numquam enim eligendi cupiditate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio at magni voluptates minus quam, animi consequuntur eius maiores ullam cum perspiciatis perferendis officia quo modi suscipit numquam enim eligendi cupiditate"
-                            .text
-                            .make()
-                            .p16(),
-                      ],
-                    ).py16(),
+                    color: context.cardColor,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          catalog.name.text.xl4
+                              .color(context.accentColor)
+                              .bold
+                              .make(),
+                          catalog.desc.text.xl.make(),
+                          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio at magni voluptates minus quam, animi consequuntur eius maiores ullam cum perspiciatis perferendis officia quo modi suscipit numquam enim eligendi cupiditate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio at magni voluptates minus quam, animi consequuntur eius maiores ullam cum perspiciatis perferendis officia quo modi suscipit numquam enim eligendi cupiditate"
+                              .text
+                              .make()
+                              .p16(),
+                        ],
+                      ).py16(),
+                    ),
                   ),
                 ),
               )
