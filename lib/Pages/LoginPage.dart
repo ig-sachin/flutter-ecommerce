@@ -17,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         changedButton = true;
       });
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(Duration(milliseconds: 500));
       await Navigator.pushNamed(context, MyRoutes.homeRoute);
       setState(() {
         changedButton = false;
@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
             Text(
               "Welcome $name",
               style: GoogleFonts.lato(
-                textStyle: Theme.of(context).textTheme.headline4,
+                textStyle: Theme.of(context).textTheme.headline5,
                 fontSize: 30,
                 fontWeight: FontWeight.w700,
                 fontStyle: FontStyle.italic,
@@ -74,7 +74,10 @@ class _LoginPageState extends State<LoginPage> {
                         });
                       },
                       decoration: InputDecoration(
-                          hintText: "Username", labelText: "Username"),
+                        icon: Icon(Icons.account_circle_outlined),
+                        hintText: "Username",
+                        labelText: "Username",
+                      ),
                     ),
                     TextFormField(
                       validator: (value) {
@@ -88,7 +91,10 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       obscureText: true,
                       decoration: InputDecoration(
-                          hintText: "Password", labelText: "Password"),
+                        icon: Icon(Icons.lock),
+                        hintText: "Password",
+                        labelText: "Password",
+                      ),
                     ),
                   ],
                 ),
@@ -103,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
               child: InkWell(
                 onTap: () => moveToHome(context),
                 child: AnimatedContainer(
-                  duration: Duration(seconds: 1),
+                  duration: Duration(milliseconds: 500),
                   width: changedButton ? 100 : 150,
                   height: 50,
                   child: changedButton

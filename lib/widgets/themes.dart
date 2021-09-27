@@ -41,4 +41,9 @@ class MyTheme {
   static Color darkCreamColor = Vx.gray900;
   static Color darkBluishColor = Color(0xff403b58);
   static Color lightBluishColor = Vx.indigo500;
+  static TextStyle headingStyleLeft = TextStyle(
+    fontSize: 40,
+    color: Colors.white,
+  );
+  static TextStyle giveGreenAccentColor = TextStyle(color: Colors.greenAccent);
 }
