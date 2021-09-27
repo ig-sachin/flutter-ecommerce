@@ -2,7 +2,6 @@ import 'package:ecommerce/Pages/routes.dart';
 import 'package:ecommerce/models/catalog.dart';
 import 'package:ecommerce/widgets/HomeWidgets/CatalogHeader.dart';
 import 'package:ecommerce/widgets/HomeWidgets/CatalogList.dart';
-import 'package:ecommerce/widgets/themes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,6 +25,7 @@ class _HomePageState extends State<HomePage> {
   loadData() async {
     final catalogJosn = await rootBundle.loadString("files/catalog.json");
     final decodedData = jsonDecode(catalogJosn);
+    await Future.delayed(Duration(seconds: 1));
     var productsData = decodedData['products'];
     CatalogModel.items = List.from(productsData)
         .map<Item>((item) => Item.fromMap(item))
@@ -56,8 +56,10 @@ class _HomePageState extends State<HomePage> {
               if (CatalogModel.items.isNotEmpty)
                 CatalogList().py16().expand()
               else
-                Center(
-                  child: CircularProgressIndicator().centered().expand(),
+                Expanded(
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
                 )
             ],
           ),
