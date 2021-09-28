@@ -9,10 +9,11 @@ class CartModel {
   late CatalogModel _catalog;
   final List<int> _itemIds = [];
 
+  // ignore: unnecessary_getters_setters
   CatalogModel get catalog => _catalog;
 
+  // ignore: unnecessary_getters_setters
   set catalog(CatalogModel newCatalog) {
-    assert(newCatalog != null);
     _catalog = newCatalog;
   }
 
