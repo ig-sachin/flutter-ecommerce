@@ -4,6 +4,7 @@ import 'package:ecommerce/models/DataSearch.dart';
 import 'package:ecommerce/models/catalog.dart';
 import 'package:ecommerce/widgets/HomeWidgets/CatalogHeader.dart';
 import 'package:ecommerce/widgets/HomeWidgets/CatalogList.dart';
+import 'package:ecommerce/widgets/HomeWidgets/CustomCarousel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -80,60 +81,30 @@ class _HomePageState extends State<HomePage> {
             children: [
               CarouselSlider(
                 items: [
-                  Container(
-                    margin: EdgeInsets.all(6.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZWNvbW1lcmNlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                  CustomCarousel(
+                    image:
+                        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZWNvbW1lcmNlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                    title: "Laptop's",
                   ),
-                  Container(
-                    margin: EdgeInsets.all(6.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZWNvbW1lcmNlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                  CustomCarousel(
+                    image:
+                        "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZWNvbW1lcmNlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                    title: "Mobile's",
                   ),
-                  Container(
-                    margin: EdgeInsets.all(6.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            "https://images.unsplash.com/photo-1512729343400-4fcf83a18f72?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGVjb21tZXJjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                  CustomCarousel(
+                    image:
+                        "https://images.unsplash.com/photo-1512729343400-4fcf83a18f72?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGVjb21tZXJjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                    title: "Buy you big TV",
                   ),
-                  Container(
-                    margin: EdgeInsets.all(6.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGVjb21tZXJjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                  CustomCarousel(
+                    image:
+                        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGVjb21tZXJjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                    title: "HP Laptops",
                   ),
-                  Container(
-                    margin: EdgeInsets.all(6.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16.0),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            "https://media.istockphoto.com/photos/man-using-mobile-smart-phone-with-global-network-connection-and-picture-id1274394138?b=1&k=20&m=1274394138&s=170667a&w=0&h=DTMn7Vg-lHFiz3yuo1O1EUQYIYQ6Wx4RmQn0buuoOGs="),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                  CustomCarousel(
+                    image:
+                        "https://media.istockphoto.com/photos/man-using-mobile-smart-phone-with-global-network-connection-and-picture-id1274394138?b=1&k=20&m=1274394138&s=170667a&w=0&h=DTMn7Vg-lHFiz3yuo1O1EUQYIYQ6Wx4RmQn0buuoOGs=",
+                    title: "AI Products",
                   ),
                 ],
                 options: CarouselOptions(
